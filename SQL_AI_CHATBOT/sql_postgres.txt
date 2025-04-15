@@ -1,0 +1,25 @@
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    category TEXT,
+    price DECIMAL
+);
+
+INSERT INTO products (name, category, price) VALUES
+('Laptop', 'Electronics', 1000),
+('Phone', 'Electronics', 500),
+('Desk', 'Furniture', 150),
+('Chair', 'Furniture', 85);
+
+CREATE TABLE sales (
+    id SERIAL PRIMARY KEY,
+    product_id INTEGER REFERENCES products(id),
+    quantity INTEGER,
+    sale_date DATE
+);
+
+INSERT INTO sales (product_id, quantity, sale_date) VALUES
+(1, 5, '2024-03-01'),
+(2, 3, '2024-03-02'),
+(3, 1, '2024-03-03'),
+(4, 10, '2024-03-04');
