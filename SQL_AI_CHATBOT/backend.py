@@ -23,7 +23,7 @@ def get_db_connection():
         host="localhost",
         database="chatbot_db",  # <-- Replace with your DB name
         user="postgres",        # <-- Replace with your DB user
-        password="1234" # <-- Replace with your password
+        password="password" # <-- Replace with your password
     )
 
 # Process question → generate SQL → execute → return result
